@@ -122,6 +122,11 @@ class Home_Page_Popups {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-home-page-popups-public.php';
 
+		/**
+		 * The class responsible for defining the settings for the updater.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-home-page-popups-options.php';
+
 		$this->loader = new Home_Page_Popups_Loader();
 
 	}
@@ -153,12 +158,14 @@ class Home_Page_Popups {
 	private function define_admin_hooks() {
 
 		$plugin_admin = new Home_Page_Popups_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_updater = new Home_Page_Popups_Options();
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
 		$this->loader->add_action( 'init', $plugin_admin, 'create_post_type' );
 		$this->loader->add_action( 'init', $plugin_admin, 'register_custom_post_status' );
+		$this->loader->add_action( 'init', $plugin_updater, 'page_poptups_settings' );
 
         $this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'build_meta_box' );
         $this->loader->add_action( 'save_post', $plugin_admin, 'save_meta_box', 10, 2  );
