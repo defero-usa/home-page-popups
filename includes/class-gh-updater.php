@@ -1,4 +1,5 @@
 <?php
+
 class GHUpdater {
     private $file;
     private $plugin;
@@ -60,6 +61,8 @@ class GHUpdater {
 
             curl_close($curl);
 
+            // die($response);
+
             $response = json_decode($response, true);
 
             if (is_array($response)) {
@@ -67,7 +70,7 @@ class GHUpdater {
             }
 
             if ($this->authorize_token) {
-                $response['zipball_url'] = add_query_arg('access_token', $this->authorize_token, $response['zipball_url']);
+                // $response['zipball_url'] = add_query_arg('access_token', $this->authorize_token, $response['zipball_url']);
             }
 
             $this->github_response = $response;

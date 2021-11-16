@@ -1,7 +1,7 @@
 <?php
 class Home_Page_Popups_Options {
 
-    function page_poptups_settings() {  
+    function page_popups_settings() {  
         add_settings_section(  
             'my_settings_section', // Section ID 
             'Home Page Popups', // Section Title
