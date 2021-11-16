@@ -76,14 +76,14 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-home-page-popups.php';
 function run_home_page_popups() {
 
 	include_once plugin_dir_path(__FILE__) . '/includes/class-gh-updater.php';
-	if ((string) get_option('updater_key_field') !== '') {
+	// if ((string) get_option('updater_key_field') !== '') {
 	
 		$updater = new GHUpdater(__FILE__);
 		$updater->set_username('defero-usa');
 		$updater->set_repository('home-page-popups');
-		$updater->authorize(get_option('updater_key_field'));
+		// $updater->authorize(get_option('updater_key_field'));
 		$updater->initialize();
-	}
+	// }
 
 	$plugin = new Home_Page_Popups();
 	$plugin->run();
