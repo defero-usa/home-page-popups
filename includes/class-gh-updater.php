@@ -52,7 +52,7 @@ class GHUpdater {
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "GET",
                 CURLOPT_HTTPHEADER => [
-                    "Authorization: token " . $this->authorize_token,
+                    // "Authorization: token " . $this->authorize_token,
                     "User-Agent: GHUpdater/1.2.3"
                 ]
             ]);
