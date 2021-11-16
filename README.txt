@@ -25,6 +25,9 @@ e.g.
 
 == Changelog ==
 
+= 1.2.1 =
+* Small fixes
+
 = 1.2 =
 * Adding an updater
 
