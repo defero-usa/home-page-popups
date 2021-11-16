@@ -25,6 +25,9 @@ e.g.
 
 == Changelog ==
 
+= 1.2.2 =
+* Removed general settings
+
 = 1.2.1 =
 * Small fixes
 
