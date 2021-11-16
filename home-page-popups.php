@@ -17,7 +17,7 @@
  * Plugin URI:        https://www.deferousa.com/
  * Description:       Plugin allow to configure and schedule popups.
  * Version:           1.2.0
- * Author:            Lisdanay
+ * Author:            Defero USA
  * Author URI:        https://www.deferousa.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
