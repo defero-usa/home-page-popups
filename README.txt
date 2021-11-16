@@ -25,6 +25,9 @@ e.g.
 
 == Changelog ==
 
+= 1.2.3 =
+* Updated the Github Updater
+
 = 1.2.2 =
 * Removed general settings
 
