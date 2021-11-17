@@ -31,7 +31,7 @@ class Home_Page_Popups_Options {
             )  
         ); 
         // register_setting('general','updater_key', 'esc_attr');
-        register_setting('general','updater_key', 'esc_attr');
+        register_setting('general','hpp_bootstrap_version', 'esc_attr');
     }
 
     function my_section_options_callback() { // Section Callback
