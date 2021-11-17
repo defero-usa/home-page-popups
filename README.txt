@@ -3,7 +3,7 @@ Contributors:
 Donate link: https://www.deferousa.com/
 Tags: popups, home page popups, defero
 Requires at least: 3.0.1
-Tested up to: 5.8
+Tested up to: 5.8.2
 Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -28,6 +28,13 @@ e.g.
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Changelog ==
+
+= 1.3.0 =
+* Adding option for Bootstrap Version
+* Updates to how it's displayed based on Bootstrap Version
+
+= 1.2.5 =
+* changed it to the action homepage_popups
 
 = 1.2.4 =
 * Updated modal to Bootstrap 5 (BREAKS COMPATIBILITY WITH BOOTSTRAP 4)

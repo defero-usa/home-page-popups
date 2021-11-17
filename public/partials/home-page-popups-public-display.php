@@ -11,10 +11,12 @@
  * @package    Home_Page_Popups
  * @subpackage Home_Page_Popups/public/partials
  */
+
+ $bootstrapVersion = get_option('hpp_bootstrap_version');
 ?>
 
 <?php foreach ( $popups as $popup ): ?>
-
+    <?php if($bootstrapVersion === 'bs5') :?>
     <div class="modal fade" id="hpp-modal-<?php echo $popup['id']; ?>" tabindex="-1" aria-labelledby="hpp-modal-<?php echo $popup['id']; ?>" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down modal-lg">
             <div class="modal-content">
@@ -31,8 +33,9 @@
         </div>
     </div>
 
+    <?php else: ?>
 
-    <!-- Bootstrap 4 Modal  <div id="hpp-modal-<?php echo $popup['id']; ?>" style="width: 100%;" class="hpp-modal">
+    <div id="hpp-modal-<?php echo $popup['id']; ?>" style="width: 100%;" class="hpp-modal">
         <div class="modal-wrapper" style="text-align:center;">
             <a  title="<?php echo $popup['name']; ?>" class="hide-on-mobile hpp-img" href="<?php echo $popup['popupRedirectTo']; ?>">
                 <img class="hide-on-mobile" alt="<?php echo $popup['name']; ?>" src="<?php echo $popup['desk_popup_img']; ?>" style="width:100%">
@@ -42,7 +45,8 @@
             </a>
         </div>
         <a href="#close-modal" rel="modal:close" class="close-modal ">Close</a>
-    </div> -->
+    </div>
+    <?php endif; ?>
 <?php endforeach; ?>
 <script>
     /*! js-cookie v3.0.1 | MIT */
@@ -60,7 +64,7 @@
                     setTimeout(
                         function( data ) {
                             $( '#hpp-modal-' + data.id).modal('show');
-                            // Cookies.set( data.popupCookieName, 'yes', {expires: parseFloat( data.popupExpiration)});
+                            Cookies.set( data.popupCookieName, 'yes', {expires: parseFloat( data.popupExpiration)});
                         },
                         2000,
                         data
@@ -77,7 +81,11 @@
             .on("modal:before-close", function() {
                 $(".jquery-modal.blocker").removeClass("open");
             });
+        <?php if($bootstrapVersion === 'bs5') : ?>
         $(window).on('shown.bs.modal', function(e, modal) {
+        <?php else : ?>
+        $(window).on(jQuery.modal.OPEN, function(e, modal) {
+        <?php endif; ?>
             var modalRatio = modal.$elm.outerHeight() / modal.$elm.outerWidth(),
                 modalMaxHeight = ($(window).innerHeight() - 64) / modalRatio;
 

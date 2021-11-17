@@ -16,7 +16,7 @@
  * Plugin Name:       Home Page Popups
  * Plugin URI:        https://www.deferousa.com/
  * Description:       Plugin allow to configure and schedule popups.
- * Version:           1.2.4
+ * Version:           1.3.0
  * Author:            Defero USA
  * Author URI:        https://www.deferousa.com/
  * License:           GPL-2.0+
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'HOME_PAGE_Popups_VERSION', '1.2.4' );
+define( 'HOME_PAGE_Popups_VERSION', '1.3.0' );
 
 /**
  * The code that runs during plugin activation.
