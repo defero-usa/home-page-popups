@@ -29,6 +29,9 @@ e.g.
 
 == Changelog ==
 
+= 1.3.2 =
+* Bug Fixes
+
 = 1.3.1 =
 * Fixed options not loading
 
