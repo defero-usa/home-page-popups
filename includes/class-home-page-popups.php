@@ -165,7 +165,7 @@ class Home_Page_Popups {
 
 		$this->loader->add_action( 'init', $plugin_admin, 'create_post_type' );
 		$this->loader->add_action( 'init', $plugin_admin, 'register_custom_post_status' );
-		// $this->loader->add_action( 'init', $plugin_updater, 'page_popups_settings' );
+		$this->loader->add_action( 'init', $plugin_updater, 'page_popups_settings' );
 
         $this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'build_meta_box' );
         $this->loader->add_action( 'save_post', $plugin_admin, 'save_meta_box', 10, 2  );

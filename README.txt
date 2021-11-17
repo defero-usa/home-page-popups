@@ -29,6 +29,9 @@ e.g.
 
 == Changelog ==
 
+= 1.3.1 =
+* Fixed options not loading
+
 = 1.3.0 =
 * Adding option for Bootstrap Version
 * Updates to how it's displayed based on Bootstrap Version
