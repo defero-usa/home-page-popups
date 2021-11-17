@@ -1,5 +1,4 @@
 jQuery(function($){
-    alert('222');
     var res_cookie = 'seenst14';
     var shown = Cookies.get(res_cookie);
     if (shown == null) {

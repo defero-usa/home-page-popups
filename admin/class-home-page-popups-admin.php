@@ -277,7 +277,8 @@ class Home_Page_Popups_Admin {
         if ( ! $query->is_main_query() ) {
             return false;
         }
-        if ( self::POST_TYPE != $query->query['post_type'] ) {
+
+        if (!isset($query->query['post_type']) || (self::POST_TYPE != $query->query['post_type'] ) ) {
             return false;
         }
 

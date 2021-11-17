@@ -25,6 +25,9 @@ e.g.
 
 == Changelog ==
 
+= 1.2.4 =
+* Updated modal to Bootstrap 5 (BREAKS COMPATIBILITY WITH BOOTSTRAP 4)
+
 = 1.2.3 =
 * Updated the Github Updater
 
