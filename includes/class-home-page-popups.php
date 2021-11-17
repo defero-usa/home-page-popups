@@ -212,7 +212,7 @@ class Home_Page_Popups {
 		//$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		//$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 	//	do_action( 'defero_popup' );
-		$this->loader->add_action( 'defero_popup', $plugin_public, 'render_popup', 100, 1 );
+		$this->loader->add_action( 'homepage_popups', $plugin_public, 'render_popup', 100, 1 );
 	}
 
 	/**

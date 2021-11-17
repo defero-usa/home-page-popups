@@ -18,6 +18,10 @@ Publish, schedule, and edit home page popups.
 
 This section describes how to install the plugin and get it working.
 
+add the following: 
+
+<?php do_action('homepage_popups', ['category', 'category-2]); ?>
+
 e.g.
 
 1. Upload `home-page-popups.php` to the `/wp-content/plugins/` directory
