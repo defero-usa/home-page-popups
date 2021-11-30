@@ -80,7 +80,7 @@ class Home_Page_Popups_Admin {
 
 		wp_enqueue_style( 'home-page-popups', plugin_dir_url( __FILE__ ) . 'css/home-page-popups-admin.css', array(), $this->version, 'all' );
 
-        if ( in_array( $_REQUEST['page'], ['schedules', 'categories'] ) ) {
+        if ( isset($_REQUEST['page']) && in_array( $_REQUEST['page'], ['schedules', 'categories'] ) ) {
             wp_enqueue_style( 'hpp-schedules', plugin_dir_url( __FILE__ ) . 'css/home-page-popups-admin-schedule.css', array(), '', 'all' );
             wp_enqueue_style( 'daterangepicker', plugin_dir_url( __FILE__ ) . 'css/daterangepicker.css', array(), '', 'all' );
         }
@@ -112,13 +112,15 @@ class Home_Page_Popups_Admin {
                 wp_enqueue_script( 'home-page-popups-validations', plugin_dir_url( __FILE__ ) . 'js/home-page-popups-admin-validations.js', 'jquery', '', true );
             }
         }
-        if (  $_REQUEST['page'] == 'schedules'  ) {
-            wp_enqueue_script( 'moment.min', plugin_dir_url( __FILE__ ) . 'js/moment.min.js', array( 'jquery' ), $this->version, false );
-            wp_enqueue_script( 'daterangepicker.min', plugin_dir_url( __FILE__ ) . 'js/daterangepicker.min.js', array( 'jquery' ), $this->version, false );
-            wp_enqueue_script( 'home-page-popups', plugin_dir_url( __FILE__ ) . 'js/home-page-popups-admin.js', array( 'jquery' ), $this->version, false );
-        }
-        if ( $_REQUEST['page'] == 'categories' ) {
-             wp_enqueue_script( 'home-page-popups-category', plugin_dir_url( __FILE__ ) . 'js/home-page-popups-admin-category.js', array( 'jquery' ), $this->version, false );
+        if ( isset($_REQUEST['page']) ) {
+            if (  $_REQUEST['page'] == 'schedules'  ) {
+                wp_enqueue_script( 'moment.min', plugin_dir_url( __FILE__ ) . 'js/moment.min.js', array( 'jquery' ), $this->version, false );
+                wp_enqueue_script( 'daterangepicker.min', plugin_dir_url( __FILE__ ) . 'js/daterangepicker.min.js', array( 'jquery' ), $this->version, false );
+                wp_enqueue_script( 'home-page-popups', plugin_dir_url( __FILE__ ) . 'js/home-page-popups-admin.js', array( 'jquery' ), $this->version, false );
+            }
+            if ( $_REQUEST['page'] == 'categories' ) {
+                wp_enqueue_script( 'home-page-popups-category', plugin_dir_url( __FILE__ ) . 'js/home-page-popups-admin-category.js', array( 'jquery' ), $this->version, false );
+            }
         }
 	}
 
